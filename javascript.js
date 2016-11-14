@@ -85,6 +85,25 @@ function aggiungiRiga(){
 }
 
 /**
+* Aggiunge l'elemento alla tabella
+* @param {Object} iItem che indica il rispettivo campo di input
+* @param {Object} iQuantita che indica il rispettivo campo di input
+* @param {Integer} posizione che indica la posizione dova va inserita l'item
+*/
+function aggiungiElemento(iItem,iQuantita,posizione){
+	var valore = 0;
+	if(posizione == -1){
+		posizione = table.rows.length -1;
+		valore = parseInt(iQuantita.value);	
+	}
+	else{
+		valore = parseInt(table.rows[posizione].cells[1].innerHTML) + parseInt(iQuantita.value);
+	}
+	table.rows[posizione].cells[0].innerHTML = iItem.value;	
+	table.rows[posizione].cells[1].innerHTML = valore;
+}
+
+/**
 * Controlla se l'item è gia presente nella tabell
 * @param {Object} iItem che indica il rispettivo campo di input
 * @return val indica la posizione
