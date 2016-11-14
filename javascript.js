@@ -96,3 +96,21 @@ function init(){
 	table.rows[2].cells[0].innerHTML = "item 2";	
 	table.rows[2].cells[1].innerHTML = 5;
 }
+
+/**
+* Funzione che permette di aggiungere i valori all'interno della tabella	
+* @param {Object} iItem che indica il rispettivo campo di input
+* @param {Object} iQuantita che indica il rispettivo campo di input
+*/
+function esegui(iItem,iQuantita){
+	var posizione = controlloElemento(iItem);
+	var ok = controlloItem(iItem) && controlloQuantita(iQuantita) && (controlloMaxElem() || posizione !=-1); //deve superare tutti i controlli
+	if(ok){
+		if(posizione == -1){
+			aggiungiRiga();
+		}
+		aggiungiElemento(iItem,iQuantita,posizione);
+	}
+	modulo.reset();
+	controlloUploader();
+}
