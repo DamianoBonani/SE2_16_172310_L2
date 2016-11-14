@@ -83,3 +83,16 @@ function aggiungiRiga(){
 	row.insertCell(0);
 	row.insertCell(1);
 }
+
+/**
+* Inizializza la tabella con 2 item
+*/
+function init(){
+	table = document.getElementById("tabella");
+	aggiungiRiga();
+	table.rows[1].cells[0].innerHTML = "item 1";	
+	table.rows[1].cells[1].innerHTML = 1;
+	aggiungiRiga();
+	table.rows[2].cells[0].innerHTML = "item 2";	
+	table.rows[2].cells[1].innerHTML = 5;
+}
