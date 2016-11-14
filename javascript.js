@@ -85,6 +85,22 @@ function aggiungiRiga(){
 }
 
 /**
+* Controlla se l'item è gia presente nella tabell
+* @param {Object} iItem che indica il rispettivo campo di input
+* @return val indica la posizione
+* @return -1 se non è presente
+*/
+function controlloElemento(iItem){
+	var val = -1;
+	for(var i=0;i<table.rows.length;i++){
+		if (table.rows[i].cells[0].innerHTML == iItem.value){
+			val = i;	
+		}
+	}
+	return val;
+}
+
+/**
 * Inizializza la tabella con 2 item
 */
 function init(){
