@@ -74,3 +74,12 @@ function impostaMaxElem(oggetto){
 	}
 	document.getElementById("scrittaMaxElem").innerHTML = "Limite elementi massimi: " + oggetto.value;
 }
+
+/**
+* Aggiunge un riga alla tabella e 2 colonne (una per l'item e una per la quantità)
+*/
+function aggiungiRiga(){
+	var row = table.insertRow(-1);
+	row.insertCell(0);
+	row.insertCell(1);
+}
