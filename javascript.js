@@ -61,3 +61,16 @@ function controlloMaxElem(){
 	else
 		return false;	
 }
+
+/**
+* Controlla se il numero di elementi massimi selezionato è minore del nimero di elementi della tabella
+* @param {Object} oggetto che indica il rispettivo campo di input
+*/
+function impostaMaxElem(oggetto){
+	var numElem = table.rows.length-1;//-1 per via dell'intestazione
+	if(oggetto.value < numElem || !isNumeric(oggetto.value)){
+		alert("Hai inserito un limite minore della quantità di elemeti, oppure hai inserito un valore non valido. \nVerrà impostato il valore di default");
+		oggetto.value = 30;//masssimo numero di elementi
+	}
+	document.getElementById("scrittaMaxElem").innerHTML = "Limite elementi massimi: " + oggetto.value;
+}
