@@ -34,6 +34,27 @@
         <div>
     </center>
     
+    <hr>
+	<button onclick="controlloUploader()" id="mostraPulsanti">Ordina </button>
+	
+    <div id="campiInserimento" class="invisibile">
+        <form id="modulo">
+          <div >
+            <label for="iItem">Item</label>
+            <br>
+            <input type="text" id="iItem" placeholder="Inserisci l'item">
+          </div>
+          <div>
+            <label for="iQuantita">Quantit&aacute;</label>
+            <br>
+            <input type="text" id="iQuantita" placeholder="Inserisci la quantita">
+          </div>
+
+            <input type="button" class="form-group" onclick="esegui(iItem,iQuantita)" value="Esegui Operazione">
+            <input type="reset" class="form-group" value="Annulla">
+        </form>
+	</div>
+    
     
 </body>
 
