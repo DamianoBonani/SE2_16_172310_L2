@@ -1,7 +1,7 @@
 /***************
 javascript
 ****************/
-
+var table; // indica la tabella
 var visibile = false; // indica se la parte di input è visibile
 /**
 * Funzione per la gestione della comparsa e scomparsa dei campi di input
@@ -45,6 +45,18 @@ function isNumeric(n) {
 */
 function controlloQuantita(oggetto){
 	if(oggetto.value!="" && isNumeric(oggetto.value))
+		return true;
+	else
+		return false;	
+}
+
+/**
+* Controlla se il numero di elementi è minore della quantità massima impostata
+* @return true se è minore
+* @return false se non è maggiore
+*/
+function controlloMaxElem(){
+	if(table.rows.length <= document.getElementById("iMaxElem").value)
 		return true;
 	else
 		return false;	
